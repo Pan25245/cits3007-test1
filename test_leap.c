@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
     if (is_leap(year)) {
       printf("%ld is a leap yearrrrrr\n", year);
     } else {
-      printf("%ld is not a leap yearsssssssss\n", year);
+      printf("%ld is not a leap yearsssssssss or not yet\n", year);
     }
   }
 
