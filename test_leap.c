@@ -1,8 +1,8 @@
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
-
+// this is hard
+//It needs some work
 /* return 0 (false) or 1 (true), depending on whether
  * `year` is a leap year or not.
  */
@@ -43,9 +43,9 @@ int main(int argc, char **argv) {
     exit(1);
   } else {
     if (is_leap(year)) {
-      printf("%ld is a leap year\n", year);
+      printf("%ld is a leap yearrrrrr\n", year);
     } else {
-      printf("%ld is not a leap year\n", year);
+      printf("%ld is not a leap yearsssssssss\n", year);
     }
   }
 
