@@ -1,25 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
-// this is hard
-//It needs some work
-//finally worked i say 
-
-
 
 /* return 0 (false) or 1 (true), depending on whether
  * `year` is a leap year or not.
  */
 int is_leap(long year) {
-
-  if (year % 4 != 0) {
-    return 0;
+  if (year % 4 == 0) {
+    if (year % 100 != 0 || (year % 100 == 0 && year % 400 == 0)) {
+      return 1;
+    }
   }
-
-  if (year % 100 == 0) {
-    return 1;
-  }
-
   return 0;
 }
 
@@ -33,25 +24,19 @@ int main(int argc, char **argv) {
   }
 
   char *end;
-
   // clear errno so we can check whether strtol fails
   errno = 0;
   long year = strtol(argv[0], &end, 10);
-  int res_errno = errno;
 
-  if (end == argv[0]) {
-    fprintf(stderr, "Error: couldn't interpret '%s' as a number\n", argv[0]);
-    exit(1);
-  } else if (res_errno == ERANGE) {
-    fprintf(stderr, "Error: '%s' is outside the range of numbers we can handleeeee\n", argv[0]);
+  if (*end != '\0' || errno == ERANGE) {
+    fprintf(stderr, "Error: couldn't interpret '%s' as a valid number\n", argv[0]);
     exit(1);
   } else {
     if (is_leap(year)) {
-      printf("%ld is a leap yearrrrrr\n", year);
+      printf("%ld is a leap year\n", year);
     } else {
-      printf("%ld is not a leap yearsssssssss or not yet\n", year);
+      printf("%ld is not a leap year\n", year);
     }
   }
-
+  return 0;
 }
-
