@@ -3,6 +3,10 @@
 #include <errno.h>
 // this is hard
 //It needs some work
+//finally worked i say 
+
+
+
 /* return 0 (false) or 1 (true), depending on whether
  * `year` is a leap year or not.
  */
@@ -39,7 +43,7 @@ int main(int argc, char **argv) {
     fprintf(stderr, "Error: couldn't interpret '%s' as a number\n", argv[0]);
     exit(1);
   } else if (res_errno == ERANGE) {
-    fprintf(stderr, "Error: '%s' is outside the range of numbers we can handle\n", argv[0]);
+    fprintf(stderr, "Error: '%s' is outside the range of numbers we can handleeeee\n", argv[0]);
     exit(1);
   } else {
     if (is_leap(year)) {
