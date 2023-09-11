@@ -3,6 +3,10 @@
 This repository contains a Makefile and C code for a program (`test_leap`)
 intended to show whether a year (supplied as a command-line argument) is a leap
 year or not.
+# CITS3007 lab 2 demo repository
+
+This repository contains a Makefile and C code for two programs,
+"factorial" and "segfault".
 
 ## Building
 
